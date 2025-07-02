@@ -55,24 +55,55 @@ from matplotlib import pyplot as plt
 # Spalvos visų turi būti skirtingos. Grafikai, ašys turi turėti
 # pavadinimus.
 
-x = [1,2,3,4,5]
-y1 = [2,2,0,0,2]
-y2= [4,3,2,1,-1]
-y3 = [2,4,9,16,25]
-y4 = [-1,1,-1,1,-1]
+# x = [1,2,3,4,5]
+# y1 = [2,2,0,0,2]
+# y2= [4,3,2,1,-1]
+# y3 = [2,4,9,16,25]
+# y4 = [-1,1,-1,1,-1]
+#
+# fig, ax = plt.subplots()
+#
+# plt.plot(x, y1,color= 'red',label='x~y1' )
+#
+# ax.scatter(x, y2,color= 'blue', label='x~y2' )
+# ax.tick_params(axis='x')
+# ax.tick_params(axis='y')
+# ax.legend()
+#
+# ax.plot(x,y3,color= 'pink',marker = '.',label='x~y3' )
+# ax.legend()
+#
+# plt.plot(x, y4, color='black', linestyle='--',label='x~y4')
+# ax.legend()
+#
+# ax.set_xlabel('time', fontsize=14)
+# ax.set_ylabel('count', fontsize=14)
+# plt.show()
 
+# ----------task3-----Sugeneruoti sąrašą x, turintį 101 elementą (nuo 0 iki 100).
+# Sukurti antrą sąrašą, kuriame būtų skaičiai, pakelti kvadratu, iš pirmojo sąrašo
+# (x*x)Sukurti trečiąjį sąrašą, kuriame skaičiai būtų pakelti kvadratu ir
+# padauginti iš atsitiktinai sugeneruoto skaičiaus (x*x)*a
+# Sugeneruoti 100-to elementų ilgio sąrašą iš atsitiktinių skaičių.
+# Visus šiuos sąrašus atvaizduoti grafike. Grafikas turi turėti
+# pavadinimą, pavadintos ašys, pakeisti šriftų dydžiai.----------------
+
+
+x = np.arange(0, 101)
+y=x**2
+a= np.random.randn(101)
+y2= y * a
+
+plt.figure(figsize=(12, 6))
 fig, ax = plt.subplots()
 
-plt.plot(x, y1,color= 'red',label='x~y1' )
+plt.plot(x, y, label='x²', linestyle='-', color='purple',)
+plt.plot(x, y2 , label='x² * a', linestyle='--', color='green')
+plt.plot(x, a, label='a (random)', linestyle=':', color='red')
 
-ax.scatter(x, y2,color= 'blue', label='x~y2' )
-ax.tick_params(axis='x')
-ax.tick_params(axis='y')
 ax.legend()
-
-ax.plot(x,y3,color= 'pink',marker = '.',label='x~y3' )
-ax.legend()
-
-plt.plot(x, y4, color='black', linestyle='--',label='x~y4')
-ax.legend()
+ax.set_xlabel("X time", fontsize=14)
+ax.set_ylabel("Y counts", fontsize=14)
 plt.show()
+
+# -----------------------
