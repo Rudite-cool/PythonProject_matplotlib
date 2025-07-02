@@ -1,3 +1,5 @@
+from calendar import calendar
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -88,22 +90,62 @@ from matplotlib import pyplot as plt
 # Visus šiuos sąrašus atvaizduoti grafike. Grafikas turi turėti
 # pavadinimą, pavadintos ašys, pakeisti šriftų dydžiai.----------------
 
-
-x = np.arange(0, 101)
-y=x**2
-a= np.random.randn(101)
-y2= y * a
-
-plt.figure(figsize=(12, 6))
-fig, ax = plt.subplots()
-
-plt.plot(x, y, label='x²', linestyle='-', color='purple',)
-plt.plot(x, y2 , label='x² * a', linestyle='--', color='green')
-plt.plot(x, a, label='a (random)', linestyle=':', color='red')
-
-ax.legend()
-ax.set_xlabel("X time", fontsize=14)
-ax.set_ylabel("Y counts", fontsize=14)
-plt.show()
+#
+# x = np.arange(0, 101)
+# y=x**2
+# a= np.random.randn(101)
+# y2= y * a
+#
+# plt.figure(figsize=(12, 6))
+# fig, ax = plt.subplots()
+#
+# plt.plot(x, y, label='x²', linestyle='-', color='purple',)
+# plt.plot(x, y2 , label='x² * a', linestyle='--', color='green')
+# plt.plot(x, a, label='a (random)', linestyle=':', color='red')
+#
+# ax.legend()
+# ax.set_xlabel("X time", fontsize=14)
+# ax.set_ylabel("Y counts", fontsize=14)
+# plt.show()
 
 # -----------------------
+# x = [1,2,3]
+# y = [9,6,8]
+# fig, ax = plt.subplots()
+# ax.bar(x,y)
+# plt.show()
+# --------
+# x = [1,2,3]
+# y = [9,6,8]
+# fig, ax = plt.subplots()
+# ax.bar(x,y, color='green',
+# label='gree')
+# ax.set_xticks(x)
+# ax.set_xticklabels(['Jan','Feb', 'Mar'])
+# ax.set_ylabel('amount')
+# ax.set_xlabel('months')
+# ax.legend()
+# plt.show()
+# ----------------Turimos vidutinės mėnesių temparatūros
+# tC=[-3.2, -3.2, +0.4, +6.7, +12.4, +15.4, +17.9, +17.1, +12.3,+7.2, +1.9, -1.9]
+# Nubraižykite stulpelinę diagramą. Neigiamas temperatūras rodantys stulpeliai turi
+# būti mėlyni, o teigiamas - žali. x ašyje turi būti rodomi mėnesių pavadinimai._______
+
+# window, graph = plt.subplots()
+# x = ['Jan','Feb', 'Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+# y=[-3.2, -3.2, +0.4, +6.7, +12.4, +15.4, +17.9, +17.1, +12.3,+7.2, +1.9, -1.9]
+# fig, ax = plt.subplots()
+# colors = ['blue' if y < 0 else 'green' for y in y]
+# ax.bar(x, y, color= colors)
+# ax.set_ylabel('Temp')
+# ax.set_xlabel('months')
+#
+# plt.show()
+# -----------------------------------
+x = [1,2,3,5,8]
+explode = [0,0,0,0,0.25]
+fig, ax = plt.subplots()
+ax.pie(x, labels=x,explode=explode, autopct='%1.2f%%',shadow=True)
+plt.show()
+
+# -------------
