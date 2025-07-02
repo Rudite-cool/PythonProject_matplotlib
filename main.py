@@ -64,11 +64,15 @@ y4 = [-1,1,-1,1,-1]
 fig, ax = plt.subplots()
 
 plt.plot(x, y1,color= 'red',label='x~y1' )
-plt.title('Graph y1 pret x')
 
 ax.scatter(x, y2,color= 'blue', label='x~y2' )
-plt.title('Graph y2 pret x')
 ax.tick_params(axis='x')
 ax.tick_params(axis='y')
+ax.legend()
+
+ax.plot(x,y3,color= 'pink',marker = '.',label='x~y3' )
+ax.legend()
+
+plt.plot(x, y4, color='black', linestyle='--',label='x~y4')
 ax.legend()
 plt.show()
